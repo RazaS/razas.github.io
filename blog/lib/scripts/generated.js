@@ -1,1 +1,1 @@
-let nodes={paths:["blog/burnout.html","blog/counterfactuals.html","blog/loss.html","blog/progress.html","blog/psychiatry.html"],nodeCount:5,linkSources:[],linkTargets:[],labels:["burnout","counterfactuals","loss","progress","psychiatry"],radii:[null,null,null,null,null],linkCount:0},attractionForce=1,linkLength=10,repulsionForce=150,centralForce=3,edgePruning=100
+ 
