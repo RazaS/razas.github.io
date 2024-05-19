@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page</title>
+    <style>
+        body {
+            background-image: url('pattern.jpg'); /* Sets the background image to pattern.jpg */
+            background-repeat: repeat; /* Repeat the background image in all directions */
+            color: navy; /* Navy blue text */
+            font-family: Arial, sans-serif; /* Using Arial font */
+        }
+        a {
+            color: rgb(238, 135, 0); /* Navy blue links */
+        }
+
+        img {
+            width: 80%; /* Makes the image stretch to fill the width of the page */
+            height: auto; /* Keeps the image's aspect ratio intact */
+            display: block; /* Removes default image inline characteristics */
+        }
+
+        h3 {
+            text-align: center; /* Centers the text of the h1 header */
+            margin-top: 20px; /* Adds space above the header */
+        }
+
+        .half-page {
+        width: 80%; /* Sets width to 50% of the containing element */
+        display: block; /* Ensures the image does not display inline */
+        margin: auto; /* Centers the image horizontally */
+    }
+
+
+    </style>
+
+</head>
+
+<body>
+  <title>CSTM 2024 Poster Appendix</title>
+    
+
+  <img src="cstm2024header.png" alt="Poster_Header" >
+
+    <h3>Appendix: Model details</h3>
+
+
+  <p>Logistic regression models predicting the presence of one RHCE variant
+  </br>
+
+
+</br>
+
+<h4>1) Black self-declared ethnic group as the predictor:</h4>
+<p>glm(formula = rhce_one_variant_present ~ DONOR_ETHNICITY_BLACK, 
+    family = binomial(link = "logit"), data = geno_data)</p>
+
+<h4>Deviance Residuals:</h4>
+<table>
+    <tr>
+        <th>Min</th>
+        <th>1Q</th>
+        <th>Median</th>
+        <th>3Q</th>
+        <th>Max</th>
+    </tr>
+    <tr>
+        <td>-1.0273</td>
+        <td>-0.2457</td>
+        <td>-0.2457</td>
+        <td>-0.2457</td>
+        <td>2.6516</td>
+    </tr>
+</table>
+
+<h4>Coefficients:</h4>
+<table>
+    <tr>
+        <th></th>
+        <th>Estimate</th>
+        <th>Std. Error</th>
+        <th>z value</th>
+        <th>Pr(&gt;|z|)</th>
+    </tr>
+    <tr>
+        <td>(Intercept)</td>
+        <td>-3.4852</td>
+        <td>0.1058</td>
+        <td>-32.93</td>
+        <td>&lt;2e-16 ***</td>
+    </tr>
+    <tr>
+        <td>DONOR_ETHNICITY_BLACK</td>
+        <td>3.1215</td>
+        <td>0.1219</td>
+        <td>25.62</td>
+        <td>&lt;2e-16 ***</td>
+    </tr>
+</table>
+<p>---</p>
+<p>Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</p>
+
+<p>(Dispersion parameter for binomial family taken to be 1)</p>
+
+<p>Null deviance: 3295.2  on 4227  degrees of freedom</p>
+<p>Residual deviance: 2363.2  on 4226  degrees of freedom</p>
+<p>AIC: 2367.2</p>
+
+<p>Number of Fisher Scoring iterations: 6</p>
+
+</br>
+</br>
+
+    <h4>Phenotype as the predictor:</h4>
+    <p>glm(formula = rhce_one_variant_present ~ ABO + RH + C.1 + E.1 + 
+    c + e + Jka + Jkb + Fya + M + N + Fyb + S.1 + s, family = binomial(link = "logit"), 
+    data = geno_data)</p>
+
+    <h4>Deviance Residuals:</h4>
+    <table>
+        <tr>
+            <th>Min</th>
+            <th>1Q</th>
+            <th>Median</th>
+            <th>3Q</th>
+            <th>Max</th>
+        </tr>
+        <tr>
+            <td>-1.3990</td>
+            <td>-0.4021</td>
+            <td>-0.3003</td>
+            <td>-0.1669</td>
+            <td>3.1908</td>
+        </tr>
+    </table>
+
+    <h4>Coefficients:</h4>
+    <table>
+        <tr>
+            <th></th>
+            <th>Estimate</th>
+            <th>Std. Error</th>
+            <th>z value</th>
+            <th>Pr(&gt;|z|)</th>
+        </tr>
+        <tr>
+            <td>(Intercept)</td>
+            <td>-3.1091274</td>
+            <td>1.3931892</td>
+            <td>-2.232</td>
+            <td>0.0256 *</td>
+        </tr>
+        <tr>
+            <td>ABOAB</td>
+            <td>-0.4046461</td>
+            <td>0.3743861</td>
+            <td>-1.081</td>
+            <td>0.2798</td>
+        </tr>
+        <tr>
+            <td>ABOB</td>
+            <td>0.1673220</td>
+            <td>0.1773789</td>
+            <td>0.943</td>
+            <td>0.3455</td>
+        </tr>
+        <tr>
+            <td>ABOO</td>
+            <td>0.0596600</td>
+            <td>0.1258756</td>
+            <td>0.474</td>
+            <td>0.6355</td>
+        </tr>
+        <tr>
+            <td>RHNEG</td>
+            <td>-1.7886430</td>
+            <td>1.1441707</td>
+            <td>-1.563</td>
+            <td>0.1180</td>
+        </tr>
+        <tr>
+            <td>RHPOS</td>
+            <td>0.3771766</td>
+            <td>1.1322685</td>
+            <td>0.333</td>
+            <td>0.7390</td>
+        </tr>
+        <tr>
+            <td>C.1</td>
+            <td>-0.8090516</td>
+            <td>0.1286243</td>
+            <td>-6.290</td>
+            <td>3.17e-10 ***</td>
+        </tr>
+        <tr>
+            <td>E.1</td>
+            <td>-1.6143946</td>
+            <td>0.1727046</td>
+            <td>-9.348</td>
+            <td>&lt; 2e-16 ***</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>1.3148543</td>
+            <td>0.2072087</td>
+            <td>6.346</td>
+            <td>2.22e-10 ***</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>1.5996300</td>
+            <td>0.7319399</td>
+            <td>2.185</td>
+            <td>0.0289 *</td>
+        </tr>
+        <tr>
+            <td>Jka</td>
+            <td>0.0746823</td>
+            <td>0.1687124</td>
+            <td>0.443</td>
+            <td>0.6580</td>
+        </tr>
+        <tr>
+            <td>Jkb</td>
+            <td>0.0225857</td>
+            <td>0.1156381</td>
+            <td>0.195</td>
+            <td>0.8451</td>
+        </tr>
+        <tr>
+            <td>Fya</td>
+            <td>-1.1964334</td>
+            <td>0.1259461</td>
+            <td>-9.500</td>
+            <td>&lt; 2e-16 ***</td>
+        </tr>
+        <tr>
+            <td>M</td>
+            <td>0.0604786</td>
+            <td>0.1360605</td>
+            <td>0.444</td>
+            <td>0.6567</td>
+        </tr>
+        <tr>
+            <td>N</td>
+            <td>-0.0309634</td>
+            <td>0.1257232</td>
+            <td>-0.246</td>
+            <td>0.8055</td>
+        </tr>
+        <tr>
+            <td>Fyb</td>
+            <td>-1.2151352</td>
+            <td>0.1214879</td>
+            <td>-10.002</td>
+            <td>&lt; 2e-16 ***</td>
+        </tr>
+        <tr>
+            <td>S.1</td>
+            <td>-0.0667337</td>
+            <td>0.1184784</td>
+            <td>-0.563</td>
+            <td>0.5733</td>
+        </tr>
+        <tr>
+            <td>s</td>
+            <td>-0.0003865</td>
+            <td>0.1840825</td>
+            <td>-0.002</td>
+            <td>0.9983</td>
+        </tr>
+    </table>
+    <p>---</p>
+    <p>Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</p>
+
+    <p>(Dispersion parameter for binomial family taken to be 1)</p>
+
+    <p>Null deviance: 3295.2  on 4227  degrees of freedom</p>
+    <p>Residual deviance: 2407.4  on 4210  degrees of freedom</p>
+    <p>AIC: 2443.4</p>
+
+    <p>Number of Fisher Scoring iterations: 6</p>
+    </br>
+  </br>
+
+<a href="https://forms.gle/uKqNkiu6Sj9bj9QN8">Click here to provide <b>feedback</b> to authors</a>
+
+    
+</body>
+</html>
